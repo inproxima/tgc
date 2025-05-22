@@ -517,7 +517,7 @@ function App() {
             </TabPanel>
             
             <TabPanel value={tabIndex} index={3}>
-              <FileUpload uploadEndpoint="http://localhost:5004/upload" />
+              <FileUpload uploadEndpoint={process.env.REACT_APP_FILE_UPLOAD_URL || "http://localhost:5001/upload"} />
             </TabPanel>
           </Paper>
           
