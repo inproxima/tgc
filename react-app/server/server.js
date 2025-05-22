@@ -19,7 +19,13 @@ const openai = new OpenAI({
 });
 
 // Middleware
-app.use(cors());
+const allowedReactAppOrigin = process.env.CORS_ORIGIN_REACT_APP || 'http://localhost:3000';
+
+app.use(cors({
+  origin: allowedReactAppOrigin,
+  methods: ['GET', 'POST'], // Adjust methods as needed by your API
+  credentials: true // If you use cookies or sessions
+}));
 app.use(bodyParser.json());
 
 // Check if OpenAI API key is configured

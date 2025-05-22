@@ -5,8 +5,24 @@ const multer = require('multer');
 const cors = require('cors');
 
 const app = express();
+
+const allowedOrigins = [
+  process.env.CORS_ORIGIN_REACT_APP, 
+  process.env.CORS_ORIGIN_REACT_APP_SERVER,
+  'http://localhost:3000', // Keep for local development
+  'http://localhost:5003'  // Keep for local development, if this is another local client
+].filter(Boolean); // Filter out undefined/null values
+
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:5003'],
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
   methods: ['GET', 'POST'],
   credentials: true
 }));
