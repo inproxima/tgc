@@ -1,0 +1,123 @@
+SAMPLE DATA FOR TESTING THE AI CASE STUDY GENERATOR
+
+Copy and paste these responses into the corresponding form fields to test the application.
+
+-------------------------------------------
+CASE STUDY TITLE:
+-------------------------------------------
+Implementing GPT-4 for Personalized Feedback in Graduate-Level Writing Courses
+
+-------------------------------------------
+AUTHOR'S NAME:
+-------------------------------------------
+Dr. Sarah Johnson
+
+-------------------------------------------
+COURSE LEVEL:
+-------------------------------------------
+Graduate
+
+-------------------------------------------
+EDUCATIONAL CONTEXT:
+-------------------------------------------
+This case study examines the implementation of AI in a graduate-level academic writing course for international students in a Masters of Education program. The cohort consisted of 28 students from diverse linguistic backgrounds, with varying levels of academic writing proficiency in English.
+
+-------------------------------------------
+PROBLEM, OPPORTUNITY, OR GOAL:
+-------------------------------------------
+The primary goal was to address the significant time constraints faculty faced in providing detailed, personalized feedback on multiple drafts of student writing. Additionally, the implementation aimed to provide students with immediate feedback outside of class hours to support their iterative writing process.
+
+-------------------------------------------
+AI TOOLS OR PLATFORMS:
+-------------------------------------------
+The implementation utilized OpenAI's GPT-4 through a custom-built web interface that integrated with the university's learning management system. The interface allowed students to submit drafts and receive AI-generated feedback, which was logged for instructor review.
+
+-------------------------------------------
+AI FUNCTIONALITY:
+-------------------------------------------
+GPT-4 functions through a large language model trained on diverse texts, allowing it to analyze writing for structure, coherence, citation practices, and academic tone. The system was fine-tuned with exemplars of strong academic writing in education and specific rubrics from the course.
+
+-------------------------------------------
+TECHNOLOGY JUSTIFICATION:
+-------------------------------------------
+GPT-4 was selected due to its superior performance in understanding complex academic writing conventions and its ability to provide contextual feedback rather than simply identifying errors. Its advanced capabilities in understanding discipline-specific language made it appropriate for graduate-level writing support.
+
+-------------------------------------------
+PREPARATION PHASE:
+-------------------------------------------
+The preparation phase involved a three-month period of system design and testing. Faculty underwent training sessions to understand the capabilities and limitations of the AI system. Sample student papers from previous semesters (with permission) were used to fine-tune the model for education-specific writing conventions.
+
+-------------------------------------------
+EXECUTION PHASE:
+-------------------------------------------
+The AI system was deployed over a 16-week semester. Students were introduced to the system in the first week through a workshop that clarified the role of AI feedback as supplementary to instructor guidance. Students submitted drafts to the AI system before instructor review, allowing them to revise based on initial AI feedback.
+
+-------------------------------------------
+POST-DEPLOYMENT SUPPORT:
+-------------------------------------------
+Post-deployment support included weekly office hours specifically for questions about the AI feedback, a dedicated discussion forum for sharing experiences with the system, and bi-weekly calibration of the AI based on emerging patterns in student submissions and feedback quality.
+
+-------------------------------------------
+ETHICAL AI PRACTICES:
+-------------------------------------------
+To ensure ethical AI practices, we established clear transparency about when students were receiving AI versus human feedback. All AI suggestions were reviewed by instructors before final grading to prevent algorithmic bias. Student data was anonymized and stored according to institutional privacy protocols, with opt-out options available.
+
+-------------------------------------------
+INCLUSIVITY AND ACCESSIBILITY:
+-------------------------------------------
+Inclusivity was addressed through careful attention to how the AI responded to varieties of English and cultural expressions in writing. The system was designed to recognize diverse writing styles and cultural references without penalizing non-Western approaches to academic argumentation. Accessibility features included text-to-speech options for feedback review.
+
+-------------------------------------------
+EDI PRINCIPLES:
+-------------------------------------------
+EDI principles informed the implementation by specifically addressing potential biases in how the AI evaluated writing from non-native English speakers. Regular audits of feedback patterns were conducted to identify any systematic inequities, and adjustments were made to the system when biases were detected.
+
+-------------------------------------------
+AI IMPACT:
+-------------------------------------------
+The AI implementation significantly impacted the educational environment by increasing the frequency and depth of feedback students received during their writing process. Faculty reported 40% reduction in time spent on basic writing feedback, allowing more focus on conceptual guidance. Students engaged in more revision cycles than in previous semesters.
+
+-------------------------------------------
+EVIDENCE OF IMPACT:
+-------------------------------------------
+Evidence of impact included comparative analysis of draft quality between current and previous cohorts, showing a 28% improvement in structure and coherence on first submissions. Student surveys indicated 87% satisfaction with the immediacy of feedback, and faculty reported increased time for higher-order teaching activities.
+
+-------------------------------------------
+CRITICAL REFLECTION:
+-------------------------------------------
+Upon reflection, the AI system served as both a teaching tool and a learning scaffold. While it effectively addressed the initial goal of reducing faculty workload, its greatest value emerged in normalizing the revision process for students and demystifying academic writing conventions through concrete, iterative feedback.
+
+-------------------------------------------
+CHALLENGES AND BARRIERS:
+-------------------------------------------
+Implementation faced challenges including initial student skepticism about AI-generated feedback, occasional misinterpretations of discipline-specific terminology by the AI system, and technical integration issues with the learning management system that created access barriers for some students.
+
+-------------------------------------------
+MITIGATION STRATEGIES:
+-------------------------------------------
+These challenges were mitigated through clear communication about the role and limitations of AI feedback, regular refinement of the model's understanding of specialized terminology, and the development of alternative submission pathways when technical issues arose. Faculty validation of AI feedback helped build student trust.
+
+-------------------------------------------
+REFLECTIVE INSIGHTS:
+-------------------------------------------
+Key insights gained include the importance of positioning AI as a complementary tool rather than a replacement for human instruction, the value of transparency in how AI generates feedback, and the necessity of ongoing human oversight to catch and correct limitations in the AI's understanding.
+
+-------------------------------------------
+FUTURE PLANS:
+-------------------------------------------
+Future plans include expanding the system to additional graduate writing courses across disciplines, with customized training for field-specific conventions. A peer-review component will be integrated, allowing students to collaboratively evaluate AI suggestions before implementing changes.
+
+-------------------------------------------
+FUTURE RESEARCH:
+-------------------------------------------
+Research opportunities identified include investigating the long-term impact on student writing development, examining how AI feedback influences student agency in the writing process, and exploring the potential for AI to identify patterns in student writing that might inform curriculum development.
+
+-------------------------------------------
+RECOMMENDATIONS:
+-------------------------------------------
+Recommendations for institutional support include developing clear policies about AI use in assessment, investing in faculty development focused on AI-enhanced pedagogy, and creating technical support structures specifically for educational AI implementation.
+
+-------------------------------------------
+ACKNOWLEDGEMENTS:
+-------------------------------------------
+We gratefully acknowledge the support of the University's Center for Teaching Innovation for their financial and technical support, the Graduate Writing Program for their collaboration, and the cohort of students who provided valuable feedback throughout this pilot implementation. 
