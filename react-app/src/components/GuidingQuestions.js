@@ -79,6 +79,7 @@ function GuidingQuestions({ questions }) {
         gutterBottom
         sx={{
           mb: 3,
+          mt: 2,
           fontWeight: 600,
           color: theme.palette.text.primary
         }}
@@ -133,6 +134,7 @@ function GuidingQuestions({ questions }) {
         startIcon={<DownloadIcon />}
         onClick={handleDownload}
         size="large"
+        sx={{ mt: 2 }}
       >
         Download Guiding Questions
       </Button>

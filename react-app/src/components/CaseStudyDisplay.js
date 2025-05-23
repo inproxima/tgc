@@ -292,7 +292,8 @@ function CaseStudyDisplay({ caseStudy, title, author, acknowledgements }) {
           sx={{ 
             fontSize: { xs: '1.75rem', sm: '2rem' }, 
             fontWeight: 700,
-            color: theme.palette.primary.main
+            color: theme.palette.primary.main,
+            mt: 1
           }}
         >
           {title}

@@ -57,7 +57,9 @@ function FileUpload({ uploadEndpoint }) {
 
   return (
     <Box sx={{ p: 4 }}>
-      <Typography variant="h4" gutterBottom>Upload a File</Typography>
+      <Typography variant="h4" gutterBottom sx={{ mb: 3, mt: 2 }}>
+        Upload a File
+      </Typography>
       <Paper
         elevation={isDragging ? 6 : 1}
         sx={{
@@ -96,7 +98,7 @@ function FileUpload({ uploadEndpoint }) {
         color="primary"
         disabled={!selectedFile || isUploading}
         onClick={handleUpload}
-        sx={{ minWidth: 180 }}
+        sx={{ minWidth: 180, mt: 2 }}
       >
         {isUploading ? <CircularProgress size={24} /> : 'Upload File'}
       </Button>
