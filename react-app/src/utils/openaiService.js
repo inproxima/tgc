@@ -43,66 +43,129 @@ export const generateCaseStudy = async (formData) => {
 
 // Helper function to return sample case study when the server is not available
 function getSampleCaseStudy(formData) {
-  return `# ${formData.caseStudyTitle || "AI Case Study"}
+  let caseStudy = `# ${formData.caseStudyTitle || "AI Case Study"}\n\n`;
 
-## 1. Introduction and Context of AI Use
+  // Helper function to check if a field has content
+  const hasContent = (field) => field && field.trim().length > 0;
 
-The implementation of AI took place in a ${formData.courseLevel || "university"} setting. ${formData.educationalContext || "This case study explores the integration of artificial intelligence technologies in an educational environment."}
+  // 1. Introduction and Context of AI Use
+  let introSection = "";
+  if (hasContent(formData.courseLevel)) {
+    introSection += `Course Level: ${formData.courseLevel}\n\n`;
+  }
+  if (hasContent(formData.educationalContext)) {
+    introSection += `Educational Context: ${formData.educationalContext}\n\n`;
+  }
+  if (hasContent(formData.problemGoal)) {
+    introSection += `Problem, Opportunity, or Goal: ${formData.problemGoal}\n\n`;
+  }
+  
+  if (introSection) {
+    caseStudy += `## 1. Introduction and Context of AI Use\n\n${introSection}`;
+  }
 
-${formData.problemGoal || "The primary goal was to enhance student learning outcomes and provide personalized feedback at scale."}
+  // 2. Description of AI Technology
+  let techSection = "";
+  if (hasContent(formData.aiTools)) {
+    techSection += `AI Tools or Platforms: ${formData.aiTools}\n\n`;
+  }
+  if (hasContent(formData.aiFunctionality)) {
+    techSection += `AI Functionality: ${formData.aiFunctionality}\n\n`;
+  }
+  if (hasContent(formData.aiJustification)) {
+    techSection += `Technology Justification: ${formData.aiJustification}\n\n`;
+  }
+  
+  if (techSection) {
+    caseStudy += `## 2. Description of AI Technology\n\n${techSection}`;
+  }
 
-## 2. Description of AI Technology
+  // 3. Implementation Process
+  let implSection = "";
+  if (hasContent(formData.preparationPhase)) {
+    implSection += `Preparation Phase: ${formData.preparationPhase}\n\n`;
+  }
+  if (hasContent(formData.executionPhase)) {
+    implSection += `Execution Phase: ${formData.executionPhase}\n\n`;
+  }
+  if (hasContent(formData.postDeployment)) {
+    implSection += `Post-deployment Support: ${formData.postDeployment}\n\n`;
+  }
+  
+  if (implSection) {
+    caseStudy += `## 3. Implementation Process\n\n${implSection}`;
+  }
 
-${formData.aiTools || "Various AI tools were employed including natural language processing and machine learning algorithms."}
+  // 4. Ethical and Inclusive Considerations
+  let ethicsSection = "";
+  if (hasContent(formData.ethicalPractices)) {
+    ethicsSection += `Ethical AI Practices: ${formData.ethicalPractices}\n\n`;
+  }
+  if (hasContent(formData.inclusivity)) {
+    ethicsSection += `Inclusivity and Accessibility: ${formData.inclusivity}\n\n`;
+  }
+  if (hasContent(formData.ediPrinciples)) {
+    ethicsSection += `EDI Principles: ${formData.ediPrinciples}\n\n`;
+  }
+  
+  if (ethicsSection) {
+    caseStudy += `## 4. Ethical and Inclusive Considerations\n\n${ethicsSection}`;
+  }
 
-${formData.aiFunctionality || "These AI systems function by analyzing student inputs and providing adaptive responses based on pattern recognition."}
+  // 5. Outcomes and Educational Impact
+  let outcomesSection = "";
+  if (hasContent(formData.impact)) {
+    outcomesSection += `AI Impact: ${formData.impact}\n\n`;
+  }
+  if (hasContent(formData.evidence)) {
+    outcomesSection += `Evidence of Impact: ${formData.evidence}\n\n`;
+  }
+  if (hasContent(formData.criticalReflection)) {
+    outcomesSection += `Critical Reflection: ${formData.criticalReflection}\n\n`;
+  }
+  
+  if (outcomesSection) {
+    caseStudy += `## 5. Outcomes and Educational Impact\n\n${outcomesSection}`;
+  }
 
-${formData.aiJustification || "This technology was selected for its ability to scale personalized education efficiently."}
+  // 6. Challenges and Limitations
+  let challengesSection = "";
+  if (hasContent(formData.challenges)) {
+    challengesSection += `Challenges and Barriers: ${formData.challenges}\n\n`;
+  }
+  if (hasContent(formData.mitigationStrategies)) {
+    challengesSection += `Mitigation Strategies: ${formData.mitigationStrategies}\n\n`;
+  }
+  if (hasContent(formData.reflectiveInsights)) {
+    challengesSection += `Reflective Insights: ${formData.reflectiveInsights}\n\n`;
+  }
+  
+  if (challengesSection) {
+    caseStudy += `## 6. Challenges and Limitations of AI Implementation\n\n${challengesSection}`;
+  }
 
-## 3. Implementation Process
+  // 7. Sustainability and Future Use
+  let futureSection = "";
+  if (hasContent(formData.futurePlans)) {
+    futureSection += `Future Plans: ${formData.futurePlans}\n\n`;
+  }
+  if (hasContent(formData.futureResearch)) {
+    futureSection += `Future Research: ${formData.futureResearch}\n\n`;
+  }
+  if (hasContent(formData.recommendations)) {
+    futureSection += `Recommendations: ${formData.recommendations}\n\n`;
+  }
+  
+  if (futureSection) {
+    caseStudy += `## 7. Sustainability and Future AI Use\n\n${futureSection}`;
+  }
 
-${formData.preparationPhase || "The preparation involved training faculty on the new AI tools and preparing course materials."}
+  // Acknowledgements (optional section)
+  if (hasContent(formData.acknowledgements)) {
+    caseStudy += `## Acknowledgements\n\n${formData.acknowledgements}\n\n`;
+  }
 
-${formData.executionPhase || "Implementation was conducted gradually across several semesters to allow for adjustment and refinement."}
-
-${formData.postDeployment || "Continuous support was provided through regular check-ins and technical assistance."}
-
-## 4. Ethical and Inclusive Considerations
-
-${formData.ethicalPractices || "Ethical considerations included data privacy, transparency about AI use, and human oversight of AI decisions."}
-
-${formData.inclusivity || "The system was designed to accommodate diverse learning styles and accessibility needs."}
-
-${formData.ediPrinciples || "Equity was prioritized by ensuring all students had equal access to the technology and support."}
-
-## 5. Outcomes and Educational Impact
-
-${formData.impact || "The implementation resulted in improved student engagement and higher completion rates."}
-
-${formData.evidence || "Surveys indicated 85% of students found the AI feedback helpful, and assessment scores improved by an average of 12%."}
-
-${formData.criticalReflection || "The most significant value was in freeing instructors to focus on complex learning support rather than routine feedback."}
-
-## 6. Challenges and Limitations of AI Implementation
-
-${formData.challenges || "Technical integration with existing systems posed significant challenges, as did initial faculty resistance."}
-
-${formData.mitigationStrategies || "These challenges were addressed through comprehensive training and phased implementation."}
-
-${formData.reflectiveInsights || "A key insight was the importance of maintaining human connection alongside technological enhancement."}
-
-## 7. Sustainability and Future AI Use
-
-${formData.futurePlans || "Future plans include expanding AI use to other courses and developing more sophisticated assessment capabilities."}
-
-${formData.futureResearch || "Research opportunities include examining long-term impacts on student learning outcomes and faculty pedagogy."}
-
-${formData.recommendations || "We recommend institutional investment in AI infrastructure and professional development."}
-
-## Acknowledgements
-
-${formData.acknowledgements || "We thank all participants and supporters of this educational innovation project."}
-`;
+  return caseStudy;
 }
 
 /**

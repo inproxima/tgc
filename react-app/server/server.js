@@ -310,76 +310,66 @@ app.post('/api/generate-questions', async (req, res) => {
 // Helper function to prepare sections from form data
 function prepareSections(formData) {
   const sections = {
-    "1. Introduction and Context of AI Use": `
-      Course Level: ${formData.courseLevel}
-      
-      Educational Context: ${formData.educationalContext}
-      
-      Problem, Opportunity, or Goal: ${formData.problemGoal}
-    `,
-    "2. Description of AI Technology": `
-      AI Tools or Platforms: ${formData.aiTools}
-      
-      AI Functionality: ${formData.aiFunctionality}
-      
-      Technology Justification: ${formData.aiJustification}
-    `,
-    "3. Implementation Process": `
-      Preparation Phase: ${formData.preparationPhase}
-      
-      Execution Phase: ${formData.executionPhase}
-      
-      Post-deployment Support: ${formData.postDeployment}
-    `,
-    "4. Ethical and Inclusive Considerations": `
-      Ethical AI Practices: ${formData.ethicalPractices}
-      
-      Inclusivity and Accessibility: ${formData.inclusivity}
-      
-      EDI Principles: ${formData.ediPrinciples}
-    `,
-    "5. Outcomes and Educational Impact": `
-      AI Impact: ${formData.impact}
-      
-      Evidence of Impact: ${formData.evidence}
-      
-      Critical Reflection: ${formData.criticalReflection}
-    `,
-    "6. Challenges and Limitations of AI Implementation": `
-      Challenges and Barriers: ${formData.challenges}
-      
-      Mitigation Strategies: ${formData.mitigationStrategies}
-      
-      Reflective Insights: ${formData.reflectiveInsights}
-    `,
-    "7. Sustainability and Future AI Use": `
-      Future Plans: ${formData.futurePlans}
-      
-      Future Research: ${formData.futureResearch}
-      
-      Recommendations: ${formData.recommendations}
-    `,
+    "1. Introduction and Context of AI Use": {
+      "Course Level": formData.courseLevel,
+      "Educational Context": formData.educationalContext,
+      "Problem, Opportunity, or Goal": formData.problemGoal
+    },
+    "2. Description of AI Technology": {
+      "AI Tools or Platforms": formData.aiTools,
+      "AI Functionality": formData.aiFunctionality,
+      "Technology Justification": formData.aiJustification
+    },
+    "3. Implementation Process": {
+      "Preparation Phase": formData.preparationPhase,
+      "Execution Phase": formData.executionPhase,
+      "Post-deployment Support": formData.postDeployment
+    },
+    "4. Ethical and Inclusive Considerations": {
+      "Ethical AI Practices": formData.ethicalPractices,
+      "Inclusivity and Accessibility": formData.inclusivity,
+      "EDI Principles": formData.ediPrinciples
+    },
+    "5. Outcomes and Educational Impact": {
+      "AI Impact": formData.impact,
+      "Evidence of Impact": formData.evidence,
+      "Critical Reflection": formData.criticalReflection
+    },
+    "6. Challenges and Limitations of AI Implementation": {
+      "Challenges and Barriers": formData.challenges,
+      "Mitigation Strategies": formData.mitigationStrategies,
+      "Reflective Insights": formData.reflectiveInsights
+    },
+    "7. Sustainability and Future AI Use": {
+      "Future Plans": formData.futurePlans,
+      "Future Research": formData.futureResearch,
+      "Recommendations": formData.recommendations
+    }
   };
   
-  // Filter out empty sections
   let caseStudySections = "";
   
-  for (const [title, content] of Object.entries(sections)) {
-    // Check if the section has any actual content beyond field labels
+  for (const [sectionTitle, fields] of Object.entries(sections)) {
+    // Check if this section has any non-empty fields
+    const nonEmptyFields = {};
     let hasContent = false;
-    for (const line of content.split('\n')) {
-      // Skip lines that are just field labels without content
-      if (line.includes(':') && line.split(':', 1)[1]?.trim() === '') {
-        continue;
-      }
-      if (line.trim()) {  // Any non-empty line that's not just a field label
+    
+    for (const [fieldName, fieldValue] of Object.entries(fields)) {
+      // Check if field has actual content (not just whitespace)
+      if (fieldValue && fieldValue.trim().length > 0) {
+        nonEmptyFields[fieldName] = fieldValue.trim();
         hasContent = true;
-        break;
       }
     }
     
+    // Only include the section if it has at least one non-empty field
     if (hasContent) {
-      caseStudySections += `\n\n${title}\n${content}\n`;
+      caseStudySections += `\n\n${sectionTitle}\n`;
+      
+      // Add only the non-empty fields
+      for (const [fieldName, fieldValue] of Object.entries(nonEmptyFields)) {
+        caseStudySections += `\n${fieldName}: ${fieldValue}\n`;
+      }
     }
   }
   
